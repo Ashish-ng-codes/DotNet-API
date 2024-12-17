@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="yamahaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'yamaha.dbo.UserBookings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserBookings">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="firstName" />
+      <PropertyRef Name="lastName" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="city" />
+      <PropertyRef Name="vehicle" />
+      <PropertyRef Name="phoneNumber" />
+      <PropertyRef Name="bookingDate" />
+      <PropertyRef Name="totalCost" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="pincode" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="city" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="vehicle" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="helmet" Type="nvarchar" MaxLength="10" />
+    <Property Name="licenseType" Type="nvarchar" MaxLength="50" />
+    <Property Name="phoneNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="bookingDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="totalCost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <Function Name="InsertUserBooking" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="firstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="lastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="gender" Type="nvarchar" Mode="In" />
+    <Parameter Name="pincode" Type="decimal" Mode="In" />
+    <Parameter Name="city" Type="nvarchar" Mode="In" />
+    <Parameter Name="vehicle" Type="nvarchar" Mode="In" />
+    <Parameter Name="helmet" Type="nvarchar" Mode="In" />
+    <Parameter Name="licenseType" Type="nvarchar" Mode="In" />
+    <Parameter Name="phoneNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="bookingDate" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="totalCost" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="usp_delete_booking_record" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="usp_get_helmets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_get_motorcycles_with_specifications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_get_scooters_with_specifications" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_getbookingDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="usp_update_userDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="decimal" Mode="In" />
+    <Parameter Name="firstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="lastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="gender" Type="nvarchar" Mode="In" />
+    <Parameter Name="pincode" Type="decimal" Mode="In" />
+    <Parameter Name="city" Type="nvarchar" Mode="In" />
+    <Parameter Name="vehicle" Type="nvarchar" Mode="In" />
+    <Parameter Name="helmet" Type="nvarchar" Mode="In" />
+    <Parameter Name="licenseType" Type="nvarchar" Mode="In" />
+    <Parameter Name="phoneNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="bookingDate" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="totalCost" Type="decimal" Mode="In" />
+  </Function>
+  <EntityContainer Name="yamahaModelStoreContainer">
+    <EntitySet Name="UserBookings" EntityType="Self.UserBookings" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserBookings].[Id] AS [Id], 
+    [UserBookings].[firstName] AS [firstName], 
+    [UserBookings].[lastName] AS [lastName], 
+    [UserBookings].[email] AS [email], 
+    [UserBookings].[gender] AS [gender], 
+    [UserBookings].[pincode] AS [pincode], 
+    [UserBookings].[city] AS [city], 
+    [UserBookings].[vehicle] AS [vehicle], 
+    [UserBookings].[helmet] AS [helmet], 
+    [UserBookings].[licenseType] AS [licenseType], 
+    [UserBookings].[phoneNumber] AS [phoneNumber], 
+    [UserBookings].[bookingDate] AS [bookingDate], 
+    [UserBookings].[totalCost] AS [totalCost]
+    FROM [dbo].[UserBookings] AS [UserBookings]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

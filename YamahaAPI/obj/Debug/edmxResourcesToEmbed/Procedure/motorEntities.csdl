@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="yamahaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="yamahaEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="usp_get_scooters_with_specifications" ReturnType="Collection(yamahaModel.usp_get_scooters_with_specifications_Result)" />
+    <FunctionImport Name="usp_get_motorcycles_with_specifications" ReturnType="Collection(yamahaModel.usp_get_motorcycles_with_specifications_Result)" />
+    <FunctionImport Name="usp_get_helmets" ReturnType="Collection(yamahaModel.usp_get_helmets_Result)" />
+    <FunctionImport Name="InsertUserBooking">
+      <Parameter Name="firstName" Mode="In" Type="String" />
+      <Parameter Name="lastName" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="pincode" Mode="In" Type="Decimal" />
+      <Parameter Name="city" Mode="In" Type="String" />
+      <Parameter Name="vehicle" Mode="In" Type="String" />
+      <Parameter Name="helmet" Mode="In" Type="String" />
+      <Parameter Name="licenseType" Mode="In" Type="String" />
+      <Parameter Name="phoneNumber" Mode="In" Type="String" />
+      <Parameter Name="bookingDate" Mode="In" Type="String" />
+      <Parameter Name="totalCost" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="usp_getUserbookingDetails" ReturnType="Collection(yamahaModel.usp_getUserbookingDetails_Result)" />
+    <EntitySet Name="UserBookings" EntityType="yamahaModel.UserBooking" />
+    <FunctionImport Name="usp_getbookingDetails" ReturnType="Collection(yamahaModel.usp_getbookingDetails_Result)" />
+    <FunctionImport Name="usp_delete_booking_record">
+      <Parameter Name="Id" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="usp_update_userDetails">
+      <Parameter Name="Id" Mode="In" Type="Decimal" />
+      <Parameter Name="firstName" Mode="In" Type="String" />
+      <Parameter Name="lastName" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="pincode" Mode="In" Type="Decimal" />
+      <Parameter Name="city" Mode="In" Type="String" />
+      <Parameter Name="vehicle" Mode="In" Type="String" />
+      <Parameter Name="helmet" Mode="In" Type="String" />
+      <Parameter Name="licenseType" Mode="In" Type="String" />
+      <Parameter Name="phoneNumber" Mode="In" Type="String" />
+      <Parameter Name="bookingDate" Mode="In" Type="String" />
+      <Parameter Name="totalCost" Mode="In" Type="Decimal" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="usp_get_scooters_with_specifications_Result">
+    <Property Type="String" Name="imgSrc" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="price" Nullable="true" />
+    <Property Type="String" Name="power" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="performance" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="fuelTankCapacity" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="engineCapacity" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="color" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="model" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="mileage" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="kerbWeight" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="seatHeight" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="transmission" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="usp_get_motorcycles_with_specifications_Result">
+    <Property Type="String" Name="imgSrc" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="price" Nullable="true" />
+    <Property Type="String" Name="power" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="performance" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="fuelTankCapacity" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="engineCapacity" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="color" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="model" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="mileage" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="kerbWeight" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="seatHeight" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="transmission" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="usp_get_helmets_Result">
+    <Property Type="String" Name="imgSrc" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="price" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_getUserbookingDetails_Result">
+    <Property Type="String" Name="firstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="lastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="pincode" Nullable="false" Precision="10" Scale="2" />
+    <Property Type="String" Name="city" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vehicle" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="helmet" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="licenseType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phoneNumber" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="bookingDate" Nullable="false" />
+    <Property Type="Decimal" Name="totalCost" Nullable="false" Precision="10" Scale="2" />
+  </ComplexType>
+  <EntityType Name="UserBooking">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="firstName" />
+      <PropertyRef Name="lastName" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="city" />
+      <PropertyRef Name="vehicle" />
+      <PropertyRef Name="phoneNumber" />
+      <PropertyRef Name="bookingDate" />
+      <PropertyRef Name="totalCost" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="lastName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="pincode" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="city" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="vehicle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="helmet" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="licenseType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phoneNumber" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="bookingDate" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="totalCost" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+  </EntityType>
+  <ComplexType Name="usp_getbookingDetails_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="firstName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="lastName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="email" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="gender" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="pincode" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="String" Name="city" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="vehicle" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="helmet" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="licenseType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="phoneNumber" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="bookingDate" Nullable="false" />
+    <Property Type="Decimal" Name="totalCost" Nullable="false" Precision="10" Scale="2" />
+  </ComplexType>
+</Schema>

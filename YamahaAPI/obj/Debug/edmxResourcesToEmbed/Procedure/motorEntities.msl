@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="yamahaModelStoreContainer" CdmEntityContainer="yamahaEntities">
+    <FunctionImportMapping FunctionImportName="usp_get_scooters_with_specifications" FunctionName="yamahaModel.Store.usp_get_scooters_with_specifications">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="yamahaModel.usp_get_scooters_with_specifications_Result">
+          <ScalarProperty Name="imgSrc" ColumnName="imgSrc" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="power" ColumnName="power" />
+          <ScalarProperty Name="performance" ColumnName="performance" />
+          <ScalarProperty Name="fuelTankCapacity" ColumnName="fuelTankCapacity" />
+          <ScalarProperty Name="engineCapacity" ColumnName="engineCapacity" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="mileage" ColumnName="mileage" />
+          <ScalarProperty Name="kerbWeight" ColumnName="kerbWeight" />
+          <ScalarProperty Name="seatHeight" ColumnName="seatHeight" />
+          <ScalarProperty Name="transmission" ColumnName="transmission" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_get_motorcycles_with_specifications" FunctionName="yamahaModel.Store.usp_get_motorcycles_with_specifications">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="yamahaModel.usp_get_motorcycles_with_specifications_Result">
+          <ScalarProperty Name="imgSrc" ColumnName="imgSrc" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="power" ColumnName="power" />
+          <ScalarProperty Name="performance" ColumnName="performance" />
+          <ScalarProperty Name="fuelTankCapacity" ColumnName="fuelTankCapacity" />
+          <ScalarProperty Name="engineCapacity" ColumnName="engineCapacity" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="mileage" ColumnName="mileage" />
+          <ScalarProperty Name="kerbWeight" ColumnName="kerbWeight" />
+          <ScalarProperty Name="seatHeight" ColumnName="seatHeight" />
+          <ScalarProperty Name="transmission" ColumnName="transmission" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_get_helmets" FunctionName="yamahaModel.Store.usp_get_helmets">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="yamahaModel.usp_get_helmets_Result">
+          <ScalarProperty Name="imgSrc" ColumnName="imgSrc" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertUserBooking" FunctionName="yamahaModel.Store.InsertUserBooking" />
+    <EntitySetMapping Name="UserBookings">
+      <EntityTypeMapping TypeName="yamahaModel.UserBooking">
+        <MappingFragment StoreEntitySet="UserBookings">
+          <ScalarProperty Name="totalCost" ColumnName="totalCost" />
+          <ScalarProperty Name="bookingDate" ColumnName="bookingDate" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="licenseType" ColumnName="licenseType" />
+          <ScalarProperty Name="helmet" ColumnName="helmet" />
+          <ScalarProperty Name="vehicle" ColumnName="vehicle" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="pincode" ColumnName="pincode" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_getbookingDetails" FunctionName="yamahaModel.Store.usp_getbookingDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="yamahaModel.usp_getbookingDetails_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="pincode" ColumnName="pincode" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="vehicle" ColumnName="vehicle" />
+          <ScalarProperty Name="helmet" ColumnName="helmet" />
+          <ScalarProperty Name="licenseType" ColumnName="licenseType" />
+          <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+          <ScalarProperty Name="bookingDate" ColumnName="bookingDate" />
+          <ScalarProperty Name="totalCost" ColumnName="totalCost" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_delete_booking_record" FunctionName="yamahaModel.Store.usp_delete_booking_record" />
+    <FunctionImportMapping FunctionImportName="usp_update_userDetails" FunctionName="yamahaModel.Store.usp_update_userDetails" />
+  </EntityContainerMapping>
+</Mapping>
